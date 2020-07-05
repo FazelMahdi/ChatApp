@@ -13,8 +13,18 @@ var io = socketIO(server);
 io.on('connection', (socket) => {
     console.log('New user Connection');
 
+    socket.broadcast.emit('newMessage', {
+        from: "Fazel",
+        text: "Test Messsage",
+        createAt: 1235
+    })
+
     socket.on('disconnect', () => {
         console.log('User is disconnected')
+    })
+
+    socket.on('createMessage', (message) => {
+        console.log("message", message)
     })
 })
 

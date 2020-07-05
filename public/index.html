@@ -7,20 +7,16 @@
     <title>Messanger</title>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-        var socket = io();
 
-        socket.on('connect', () => {
-            console.log('Connected to server');
-        });
-
-        socket.on('disconnect', () => {
-            console.log('Disconnected from server');
-        });
     </script>
 </head>
 
 <body>
-    <p>hi</p>
+    <h3>chat messanger is ready</h3>
+    <form id="message-form">
+        <input type="text" name="message" placeholder="write your message">
+        <button>send</button>
+    </form>
 </body>
 
 </html>
